@@ -1,0 +1,137 @@
+
+.architecture-view {
+  padding: 100px 20px;
+  background: linear-gradient(180deg, var(--bg-secondary), var(--bg-primary));
+}
+
+.architecture-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.architecture-diagram {
+  position: relative;
+}
+
+.architecture-layer {
+  background: rgba(26, 31, 46, 0.6);
+  border: 2px solid var(--border-color);
+  border-radius: 16px;
+  padding: 30px;
+  margin-bottom: 20px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.architecture-layer:hover {
+  border-color: var(--layer-color);
+  box-shadow: 0 0 30px rgba(0, 217, 255, 0.2);
+  transform: translateX(10px);
+}
+
+.architecture-layer.highlighted {
+  background: rgba(0, 217, 255, 0.05);
+}
+
+.layer-title {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  color: var(--layer-color);
+}
+
+.layer-components {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.component-box {
+  background: rgba(10, 14, 26, 0.8);
+  border: 1px solid var(--border-color);
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+}
+
+.architecture-layer:hover .component-box {
+  border-color: var(--layer-color);
+  color: var(--text-primary);
+}
+
+.layer-connector {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.connector-line {
+  width: 2px;
+  height: 20px;
+  background: var(--accent-cyan);
+  margin: 0 auto;
+}
+
+.connector-arrow {
+  color: var(--accent-cyan);
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: -5px;
+}
+
+.architecture-details {
+  background: rgba(26, 31, 46, 0.4);
+  border-radius: 16px;
+  padding: 40px;
+  border: 1px solid var(--border-color);
+}
+
+.architecture-details h3 {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  color: var(--accent-cyan);
+}
+
+.flow-description {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.flow-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.step-number {
+  background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.flow-step p {
+  color: var(--text-primary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .architecture-container {
+    grid-template-columns: 1fr;
+  }
+}
